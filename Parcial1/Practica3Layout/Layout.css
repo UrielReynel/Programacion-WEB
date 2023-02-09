@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html.body{
+    width: 100%;
+    height: 100%;
+}
+
+#contenedor{
+    width: 100%;
+    height: 100%;
+}
+
+#encabezado{
+    width: 100%;
+    height: 20%;
+    background-color: aqua;
+}
+
+#barralat{
+    float: left;
+    background-color: aquamarine;
+    width: 200%;
+    height: 70%;
+}
+
+#contenido{
+    margin-left: 200px;
+    background-color: blueviolet;
+    width: calc(100% - 200px);
+    height: 10%;
+}
+#piepagina{
+    
+}
+
+
