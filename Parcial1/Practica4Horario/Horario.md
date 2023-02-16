@@ -1,0 +1,7 @@
+| Hora        | Lunes                                 | Martes                    | Miercoles                             | Jueves                | Viernes                            |
+| ----------- | ------------------------------------- | ------------------------- | ------------------------------------- | --------------------- | ---------------------------------- |
+| 7:00-8:00   | Progamacion Web                       | Progamacion Web           | Progamacion Web                       | Progamacion Web       | Progamacion Web                    |
+| 8:00-10:00  | Fundamentos de Ingeniería en Software | Libre                     | Fundamentos de Ingeniería en Software | Libre                 | Libre                              |
+| 10:00-12:00 | Cultura Empresarial                   | Estructura de Datos       | Cultura Empresarial                   | Estructura de datos   | Estructura de Datos(11:00-12:00)   |
+| 12:00-2:00  | Principios Electricos                 | Taller de Investigacion 2 | Principios Electricos                 | Principios Electricos | Principios Electricos (12:00-1:00) |
+| 2:00-3:00   | Calculo Vectorial                     | Calculo Vectorial         | Calculo Vectorial                     | Calculo Vectorial     | Calculo Vectorial                  |
