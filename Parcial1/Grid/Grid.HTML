@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        #contenedor{
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            background-color: blue;
+            grid-template-columns: 150px 150px 150px;
+            grid-template-rows: 150px 150px 150px;
+            justify-content: center;
+            align-content: center;
+            justify-items: center;
+            align-items: center;
+            grid-auto-flow: column;
+        }
+
+        .caja{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+
+        #caja1{
+            grid-column-start: 1;
+            grid-column-end: 1;
+            justify-self: start;
+        }
+
+        #caja2{
+            align-self: flex-end;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div class="caja" id="caja1">Caja 1</div>
+        <div class="caja" id="caja2">Caja 2</div>
+        <div class="caja" id="caja3">Caja 3</div>
+        <div class="caja" id="caja4">Caja 4</div>
+        <div class="caja" id="caja5">Caja 5</div>
+        <div class="caja" id="caja6">Caja 6</div>
+        <div class="caja" id="caja7">Caja 7</div>
+        <div class="caja" id="caja8">Caja 8</div>
+        <div class="caja" id="caja9">Caja 9</div>
+    </div>
+</body>
+</html>
