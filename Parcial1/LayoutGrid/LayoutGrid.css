@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor{
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:"encabezado encabezado"
+                        "barralat  contenido"
+                        "piedepagina otracosa"
+                        "otracosa2 otracosa2" ;
+
+    justify-content: center;
+    align-content: center;
+    align-items: stretch;
+    justify-items: stretch;
+}
+
+.caja{
+   /* width:  150px;
+    height: 100px;*/
+    background-color: aqua;
+    text-align: center;
+    border: 1px solid red;
+}
+
+#encabezado   {grid-area:encabezado;}
+#barralat     {grid-area: barralat;}
+#contenido    {grid-area: contenido;}
+#piedepagina  {grid-area: piedepagina;}
+#otracosa     {grid-area: otracosa;}
+#otracosa2    {grid-area: otracosa2;}
