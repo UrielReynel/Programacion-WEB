@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --texto-light:black;
+            --fondo-light:white;
+
+            --texto-dark:white;
+            --fondo-dark:black;
+        }
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+
+        div#cont{
+            
+            background-color: var(--fondo-light);
+            color: var(--texto-light);
+            height: 100%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            width: 70%;
+            margin: 0 auto;
+            line-height: 2em;
+        }
+
+        h1{
+            text-align: center;
+            padding: 1em;
+        }
+        
+        input:checked + div#cont{
+            background-color: var(--fondo-dark);
+            color: var(--texto-dark);  
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="checkbox">
+    <div id="cont">
+        <h1>Encabezado</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quos sunt inventore blanditiis hic officia, modi ab expedita aperiam voluptatum, quasi alias molestiae eveniet id tempore? Illo suscipit deserunt ipsum ad, eius harum rerum mollitia provident cupiditate ab nemo molestiae totam? Vero similique expedita ratione, quasi adipisci aliquam in amet?</p>
+    </div>
+</body>
+</html>
