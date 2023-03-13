@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="LayoutGrid.css">
+</head>
+<body>
+    <div id="cont" class="contenedor">
+      <div id="encabezado" onclick = "alert('Click encabezado')"class="caja 1"></div>  <!--Metodo 1-->
+      <div id="barralat" class="caja 2"></div>
+      <div id="contenido" class="caja 3"></div>
+      <div id="piedepagina" class="caja 4"></div>
+      <div id="otracosa" class="caja 5"></div>
+      <div id="otracosa2" class="caja 6"></div>
+    </div>
+    
+    <script> 
+    window.onload = function(){
+      //Metodo 2
+    document.getElementById("barralat").onclick=function(){alert("click en barra lateral") };
+    //document.getElementById("barralat").style.backgroundColor="yellow";
+    document.getElementById("barralat").classList.toggle("cajaAmarilla");
+    
+
+    document.getElementById("contenido").addEventListener("click",clickContenido1);
+    
+    document.getElementById("contenido").addEventListener("click",clickContenido2);
+
+    function clickContenido1(){
+      alert( "click en contenido")
+    }
+    function clickContenido2(){
+      alert( "click en contenido")
+    }
+
+    document.getElementById("piedepagina").addEventListener("click",function(){
+      alert("Click en piepagina");
+    })
+
+    document.getElementById("otracosa").addEventListener("click",()=>{
+      alert("Click en otracosa");
+    })
+  }
+
+
+    </script>
+
+</body>
+</html>

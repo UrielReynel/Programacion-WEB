@@ -37,29 +37,3 @@
 #piedepagina  {grid-area: piedepagina;}
 #otracosa     {grid-area: otracosa;}
 #otracosa2    {grid-area: otracosa2;}
-
-.caja:hover{
-    background-color: greenyellow;
-    transition-property: background-color;
-    transition-timing-function: ease-in;
-    transition-duration: 2s;
-}
-
-#contenido{
-    animation: CambiarAncho 4s linear 0s 4 normal forwards running;
-}
-
-#barralat{
-    transform: scale(1,5);
-}
-#piedepagina{
-    transform: skew(30deg,30deg);
-}
-@keyframes CambiarAncho {
-    from{
-        width: 30px;
-    }
-    to{
-        width: 700px;
-    }
-}
