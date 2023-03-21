@@ -13,8 +13,18 @@
             encabezados=["Hora","Lunes","Martes","Miercoles","Jueves","Viernes"];
             datos=[{ hora:"7-8",lunes:"web",martes:"web",miercoles:"web",
             jueves:"web",viernes:"web"
-            },{hora:"8-10",lunes:"FDIS",martes:"libre",miercoles:"FDIS",
+            },
+            {hora:"8-10",lunes:"FDIS",martes:"libre",miercoles:"FDIS",
             jueves:"libre",viernes:"libre"
+            },
+            {hora:"10-12",lunes:"Cultura Empresarial",martes:"Estructuras de Datos",miercoles:"Cultura Empresarial",
+            jueves:"Estructuras de Datos",viernes:"Estructuras de Datos"
+            },
+            {hora:"12-2",lunes:"Principios Electricos",martes:"FDI2",miercoles:"Principios Electricos",
+            jueves:"FDI2",viernes:"Principios Electricos"
+            },
+            {hora:"2-3",lunes:"Calculo Vectorial",martes:"Calculo Vectorial",miercoles:"Calculo Vectorial",
+            jueves:"Calculo Vectorial",viernes:"Calculo Vectorial"
             }];
 
             console.table(datos);
@@ -45,7 +55,7 @@
                 tr.appendChild(td1);
                 tr.appendChild(td2);
                 tr.appendChild(td3) ;
-                tbody .appendChild(tr);
+                tbody.appendChild(tr);
             }) 
             table.appendChild(thead);
             table.appendChild(tbody);
