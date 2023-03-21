@@ -43,18 +43,30 @@
             let tbody=document.createElement('thead');
             datos.forEach(function(item) {
                 let tr=document.createElement("tr");
-                let td1i=document.createElement("td");
+                let td1=document.createElement("td");
                 td1.innerText=item.hora;
 
                 let td2=document.createElement ("td");
                 td2.innerText=item. lunes;
 
-                let td3=document.createElement("“td");
+                let td3=document.createElement("td");
                 td3.innerText=item.martes;
+
+                let td4=document.createElement("td");
+                td4.innerText=item.miercoles;
+
+                let td5=document.createElement("td");
+                td5.innerText=item.jueves;
+
+                let td6=document.createElement("td");
+                td6.innerText=item.viernes;
 
                 tr.appendChild(td1);
                 tr.appendChild(td2);
-                tr.appendChild(td3) ;
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                tr.appendChild(td5);
+                tr.appendChild(td6);
                 tbody.appendChild(tr);
             }) 
             table.appendChild(thead);
