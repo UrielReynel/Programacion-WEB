@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+  src="https://code.jquery.com/jquery-3.6.4.js"
+  integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+  crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
-   <button id="btn">Peticion</button> 
+   <button id="btn1">Peticion XMLHttpRequest</button> 
+   <button id="btn2">Peticion APITarea</button> 
+   <!-- <button id="btn3">Peticion GET</button> 
+   <button id="btn3">Peticion GETJSON</button>  -->
    <div id="resultado">
 
    </div>
 
    <script>
     window.onload=function(){
-        document.getElementById("btn").addEventListener("click",function(){
+        document.getElementById("btn1").addEventListener("click",function(){
             
             let solicitud = new XMLHttpRequest();
             solicitud.responseType="json";
@@ -26,7 +33,39 @@
             solicitud.send();
         })
 
+        document.getElementById("btn2").addEventListener("click",function(){
+            const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://steamgames-special-offers.p.rapidapi.com/games_list/?start=0&count=10&region=US",
+	"method": "GET",
+	"headers": {
+		"X-RapidAPI-Key": "b637bfaec3msh30019867c440328p1beda7jsnf15f63b44695",
+		"X-RapidAPI-Host": "steamgames-special-offers.p.rapidapi.com"
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+        })
+        
     }
+
+    
+    
+    // $(document).ready(function(){
+    //     $("#btn2").click(function(){
+    //         $.ajax({
+    //             url: "https://api.chucknorris.io/jokes/random"
+    //         }).done(function(respuesta){
+    //             console.log(respuesta);
+    //             $("resultado").text(respuesta.value);
+    //         });
+    //     })
+    // })
+
+    
    </script>
 </body>
 </html>
