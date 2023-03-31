@@ -44,25 +44,44 @@
             // Metodo Ajax-------------------
             $("#btn2").click(function(){
                 $.ajax({ url:"https://catfact.ninja/fact"
-            }).done(function( respuesta ){
-                $("#resultado").text(respuesta.value);
+            }).done(function( length,fact ){
+                $("#resultado").text(length.fact);
             });
             })
 
             //Get-----------------------------------
             $("#btn3").click(function(){
-                 $.get("https://catfact.ninja/fact",function(respuesta){
-                         $("#resultado").text(respuesta.value);
+                 $.get("https://catfact.ninja/fact",function(length,fact){
+                         $("#resultado").text(length.fact);
                  },"json");
             })
 
     //Get Json------------------------------------------------
             $("#btn4").click(function(){
-                $.getJSON("https://http.cat/401",function(respuesta){
-                    $("#resultado").text(respuesta.value);
+                $.getJSON("https://catfact.ninja/fact",function(length,fact){
+                    $("#resultado").text(length.fact);
         });
     })
     })
+
+    //Fetch------------------------------------------------------
+    document.getElementById("btn5").addEventListener("click", function() {
+    fetch("https://catfact.ninja/fact")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            document.getElementById("resultado").innerText = data.fact;
+        })
+        .catch(error => console.log(error));
+});
+
+
+
+    //AXIOS------------------------------------------------------
+ 
+
+    //Fetch Async-Away-------------------------------------------
+    
 
 }
     
