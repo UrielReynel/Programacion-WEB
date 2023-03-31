@@ -12,15 +12,19 @@
 </head>
 <body>
    <button id="btn1">Peticion XMLHttpRequest</button> 
-   <button id="btn2">Peticion APITarea</button> 
-   <!-- <button id="btn3">Peticion GET</button> 
-   <button id="btn3">Peticion GETJSON</button>  -->
+   <button id="btn2">Peticion jquery</button> 
+   <button id="btn3">Peticion GET</button> 
+   <button id="btn4">Peticion GETJSON</button> 
+   <button id="btn5">Peticion Fetch</button> 
+   <button id="btn6">Peticion Axios</button> 
+   <button id="btn6">Peticion Fetch Async-Away</button> 
    <div id="resultado">
 
    </div>
 
    <script>
     window.onload=function(){
+        // Vanilla JS
         document.getElementById("btn1").addEventListener("click",function(){
             
             let solicitud = new XMLHttpRequest();
@@ -32,38 +36,43 @@
             solicitud.open("GET","https://api.chucknorris.io/jokes/random",true);
             solicitud.send();
         })
+    
 
-        document.getElementById("btn2").addEventListener("click",function(){
-            const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://steamgames-special-offers.p.rapidapi.com/games_list/?start=0&count=10&region=US",
-	"method": "GET",
-	"headers": {
-		"X-RapidAPI-Key": "b637bfaec3msh30019867c440328p1beda7jsnf15f63b44695",
-		"X-RapidAPI-Host": "steamgames-special-offers.p.rapidapi.com"
-	}
-};
+    //JQuery
+    $(document).ready(function() {
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
-        })
+            // Metodo Ajax-------------------
+            $("#btn2").click(function(){
+                $.ajax({ url:"https://catfact.ninja/fact"
+            }).done(function( respuesta ){
+                $("#resultado").text(respuesta.value);
+            });
+            })
+
+            //Get-----------------------------------
+            $("#btn3").click(function(){
+                 $.get("https://catfact.ninja/fact",function(respuesta){
+                         $("#resultado").text(respuesta.value);
+                 },"json");
+            })
+
+    //Get Json------------------------------------------------
+            $("#btn4").click(function(){
+                $.getJSON("https://http.cat/401",function(respuesta){
+                    $("#resultado").text(respuesta.value);
+        });
+    })
+    })
+
+}
+    
+            
+
+
         
-    }
 
     
-    
-    // $(document).ready(function(){
-    //     $("#btn2").click(function(){
-    //         $.ajax({
-    //             url: "https://api.chucknorris.io/jokes/random"
-    //         }).done(function(respuesta){
-    //             console.log(respuesta);
-    //             $("resultado").text(respuesta.value);
-    //         });
-    //     })
-    // })
+
 
     
    </script>

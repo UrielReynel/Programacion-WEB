@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="SideBArClick.css">
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="SideBarClick.Js"></script>
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none
+        }
+        .opcion > ul{
+            display: none;
+        }
+        .opcion:hover > ul{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div id="miMenu" class="menu">
+            <ul> 
+                <li id="opc1" class="opcion"><a href="#opc1">Carnes</a>
+                    <ul>
+                        <li>Hamburguesas<img src="./Imagenes/Hamburguesa.jpg" style="width: 75px; height: 40px;"  alt="Hamburguesa"></li>
+                        <li>Taquitos</li>
+                        <li>Corte de carne </li>
+                    </ul>
+                </li>
+                <li id="opc2" class="opcion"><a href="#opc2">Ensaladas</a>
+                    <ul>
+                        <li>Ensaladita de pollo</li>
+                        <li>Ensalada cesar</li>
+                        <li>Ensalada Oliver</li>
+                    </ul>
+                <li id="opc3" class="opcion"><a href = "#opc3">Bebidas</a>
+                    <ul>
+                        <li>Chelas</li>
+                        <li>Limodada </li>
+                        <li>Chescos</li>
+                    </ul>
+                <li>
+            </ul>
+        </div>
+        <div id="miContenido" class="contenido">
+            <button id="btnMenu">Menu</button>
+        </div>
+    </div>
+</body>
+</html>
