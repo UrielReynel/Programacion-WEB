@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+  src="https://code.jquery.com/jquery-3.6.4.js"
+  integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+  crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+   
+    <select name="" id="categorias"></select>
+   
+   <button id="btn5">Peticion Fetch</button> 
+ 
+   <div id="resultado">
+
+   </div>
+
+   <script>
+    window.onload=function(){
+        fetch("https://catfact.ninja/fact")
+        .then(response => response.json() )
+         .then( function(datoJson){console.log(datoJson);
+        datoJson.datoJson.forEach(elemento => {
+            console.log(elemento);
+            let opcion=document.createElement('option');
+            opcion.value=elemento;
+            opcion.text=elemento;
+            document.getElementById('categorias').appendChild(option)
+        });
+    })
+        
+    //Fetch------------------------------------------------------
+    
+    document.getElementById("btn5").addEventListener("click", function() {
+        let CategoriaSeleccionada=document.getElementById('categorias').value
+        let direccionPeticion = "https://catfact.ninja/fact="+CategoriaSeleccionada; 
+     fetch(direccionPeticion)
+         .then(response => response.json())
+         .then(data => {
+             console.log(data);
+             document.getElementById("resultado").innerText = data.fact;
+         })
+         .catch(error => console.log(error));
+ }); 
+}
+
+
+   </script>
+</body>
+</html>

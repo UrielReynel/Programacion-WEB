@@ -1,0 +1,12 @@
+{
+  "name": "modulofracel",
+  "version": "1.0.0",
+  "description": "Paquete que muestra frases celebres mexicanas y una que otra gringa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
