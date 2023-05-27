@@ -25,9 +25,19 @@
 
         <button id="btnConsulta" type="button" > Consulta</button>
         <button id="btnBorrar" type="button" > Borrar</button>
+        <button id="btnAgregar" type="button" > Agregar</button>
+        <button id="btnModificar" type="button" > Modificar</button>
+        <button id="btnLimpiar" type="button" > Limpiar</button>
+
+        <div id="mensaje" class="error-message"></div>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     </form>
 
     <script>
+
+        //Borrar
         document.getElementById("#btnBorrar").addEventListener("click",function(){
 
             let id = prompt("Teclee el ID del usuario");
@@ -50,7 +60,118 @@
                     }
                     
                 });
-        })
+        });
+
+        //Consulta
+        document.getElementById("#btnConsulta").addEventListener("click",function(){
+            let id = prompt ("Teclee el IdDel Juego");
+
+            fetch(`http://localhost:8082/Juegos/`+id)
+                .then(respuesta => respuesta.json())
+                    .then(Objecto => {
+
+                        if(Objecto.estado==1){
+                            document.getElementById("IDJuego").value=objetoCliente.IDJuego;
+                            document.getElementById("Nombre").value=objetoCliente.Nombre;
+                            document.getElementById("Clasificacion").value=objetoCliente.Clasificacion;
+                            document.getElementById("Genero").value=objetoCliente.Genero;
+                            document.getElementById("Precio").value=objetoCliente.Precio;
+
+                            document.getElementById("mensaje").innerHTML = '';
+                        }else{
+                            alert(Objeto.resultado)
+                        }
+                    });
+        });
+
+        document.getElementById("#btnAgregar").addEventListener("click",function(){
+            
+            let id = document.getElementById("IDJuego").value;
+            let Nombre = document.getElementById("Nombre").value;
+            let Clasificacion = document.getElementById("Clasificacion").value;
+            let Genero = document.getElementById("Genero").value;
+            let Precio = document.getElementById("Precio").value;
+
+            const Juego = {
+                Id:             Id,
+                Nombre:         Nombre,
+                Clasificacion:  Clasificacion,
+                Genero:         Genero,
+                Precio,         Precio
+            };
+
+            fetch(`http://localhost:8082/Juegos/`,{
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(Juego)
+            })
+            .then(respuesta=> respuesta.json())
+            .then(resultado=> {
+
+                console.log(resultado);
+
+                document.getElementById("IdJuego").value;
+                document.getElementById("Nombre").value;
+                document.getElementById("Clasificacion").value;
+                document.getElementById("Genero").value;
+                document.getElementById("Precio").value;
+            });
+
+            let mensaje = alert("Juego agregado con exito.");
+            document.getElementById("mensaje").innerHTML = "Juego agregado exitosametne";  
+        });
+
+        //Modificar
+
+        document.getElementById("#btnModificar").addEventListener("click",function(){
+            
+            let id = document.getElementById("IDJuego").value;
+            let Nombre = document.getElementById("Nombre").value;
+            let Clasificacion = document.getElementById("Clasificacion").value;
+            let Genero = document.getElementById("Genero").value;
+            let Precio = document.getElementById("Precio").value;
+
+            let nuevoJuego = {
+                Id:             Id,
+                Nombre:         Nombre,
+                Clasificacion:  Clasificacion,
+                Genero:         Genero,
+                Precio,         Precio
+            };
+            fetch(`http://localhost:8082/Juegos/`,{
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(Juego)
+            })
+            .then(respuesta=> respuesta.json())
+            .then(resultado=> {
+
+                console.log(resultado);
+            });
+
+            let mensaje = alert("Juego modificado");
+            document.getElementById("mensaje").innerHTML = "Juego Modificado";
+        });
+
+        //Limpiar Label
+        document.getElementById("#btnAgregar").addEventListener("click",function(){
+            
+            let id = document.getElementById("IDJuego").value ="";
+            let Nombre = document.getElementById("Nombre").value ="";
+            let Clasificacion = document.getElementById("Clasificacion").value ="";
+            let Genero = document.getElementById("Genero").value ="";
+            let Precio = document.getElementById("Precio").value ="";
+
+            
+
+            let mensaje = alert("Limpieza realizada");
+            document.getElementById("mensaje").innerHTML = "Limpieza realizada";
+        });
+        
     </script>
 </body>
 </html>
