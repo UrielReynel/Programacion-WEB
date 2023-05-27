@@ -1,4 +1,4 @@
-create database ejemplo;
+create databa""se ejemplo;
 use ejemplo;
 
 create table Juegos

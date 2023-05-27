@@ -37,13 +37,14 @@
                 .then(objetoRespuesta => {
                     // console.log(objetoCliente)
                     if(objetoRespuesta.estado == 1){
-                        // console.log(objetoRespuesta);
-                        // document.getElementById("IDJuego").value=objetoCliente[0].IDJuego;
-                        // document.getElementById("Nombre").value=objetoCliente[0].Nombre;
-                        // document.getElementById("Clasificacion").value=objetoCliente[0].Clasificacion;
-                        // document.getElementById("Genero").value=objetoCliente[0].Genero;
-                        // document.getElementById("Precio").value=objetoCliente[0].Precio;
-                        
+                        console.log(objetoRespuesta);
+                        document.getElementById("IDJuego").value=objetoCliente[0].IDJuego;
+                        document.getElementById("Nombre").value=objetoCliente[0].Nombre;
+                        document.getElementById("Clasificacion").value=objetoCliente[0].Clasificacion;
+                        document.getElementById("Genero").value=objetoCliente[0].Genero;
+                        document.getElementById("Precio").value=objetoCliente[0].Precio;
+
+
                     }else{
                         alert(objetoRespuesta.resultado)
                     }
