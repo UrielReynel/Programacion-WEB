@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="IDJuego">Id</label>
+        <input id="IDJuego"type="text"> <br>
+
+        <label for="nombre">nombre</label>
+        <input id="nombre"type="text"> <br>
+
+        <label for="Clasificacion">Clasificacion</label>
+        <input id="Clasificacion"type="text"> <br>
+
+        <label for="Genero">Genero</label>
+        <input id="Genero"type="text"> <br>
+
+        <label for="Precio">Precio</label>
+        <input id="Precio"type="text"> <br>
+
+        <button id="btnConsulta" type="button" > Consulta</button>
+        <button id="btnBorrar" type="button" > Borrar</button>
+    </form>
+
+    <script>
+        document.getElementById("#btnBorrar").addEventListener("click",function(){
+
+            let id = prompt("Teclee el ID del usuario");
+
+            fetch(`http://localhost:8082//Juegos?idJuego`+id,{method:"Delete"})
+            .then(respuesta => respues.JSON())
+                .then(objetoRespuesta => {
+                    // console.log(objetoCliente)
+                    if(objetoRespuesta.estado == 1){
+                        // console.log(objetoRespuesta);
+                        // document.getElementById("IDJuego").value=objetoCliente[0].IDJuego;
+                        // document.getElementById("Nombre").value=objetoCliente[0].Nombre;
+                        // document.getElementById("Clasificacion").value=objetoCliente[0].Clasificacion;
+                        // document.getElementById("Genero").value=objetoCliente[0].Genero;
+                        // document.getElementById("Precio").value=objetoCliente[0].Precio;
+                        
+                    }else{
+                        alert(objetoRespuesta.resultado)
+                    }
+                    
+                });
+        })
+    </script>
+</body>
+</html>
